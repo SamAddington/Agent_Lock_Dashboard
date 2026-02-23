@@ -1,0 +1,51 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: agent_lock_redis
+    ports:
+      - "6379:6379"
+
+  agent_lock:
+    build: ./agent_lock
+    container_name: agent_lock
+    depends_on:
+      - redis
+      - llm_agent
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      LLM_AGENT_URL: http://llm_agent:8001/propose_action
+      REGISTRY_PATH: /app/registries
+    volumes:
+      - ./agent_lock/registries:/app/registries:ro
+    ports:
+      - "8000:8000"
+
+  llm_agent:
+    build: ./llm_agent
+    container_name: llm_agent
+    environment:
+      # for OpenAI or other provider, fill in as needed
+      # OPENAI_API_KEY: ${OPENAI_API_KEY}
+      # LLM_BASE_URL: https://api.openai.com/v1/chat/completions
+      LLM_BASE_URL: ${LLM_BASE_URL:-http://host.docker.internal:11434}
+    ports:
+      - "8001:8001"
+
+  simulator:
+    build: ./simulator
+    container_name: agent_lock_simulator
+    depends_on:
+      - agent_lock
+    environment:
+      AGENT_LOCK_URL: http://agent_lock:8000/decide
+      BASELINE_URL: http://llm_agent:8001/propose_action
+    volumes:
+      - ./simulator/scenarios:/app/scenarios:ro
+      - ./simulator:/app
+    # command: sh -c "sleep 5 && python replay.py"
+    ports:
+      - "8501:8501"
+    command: streamlit run dashboard.py --server.port=8501 --server.address=0.0.0.0
+    # Run manually with `docker compose run simulator` so it
+    # doesn't loop forever in CI unless you want it to.
