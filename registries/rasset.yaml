@@ -1,0 +1,27 @@
+assets:
+  dc-01:
+    tier: 0
+    owner: identity:sec-team
+  siem-01:
+    tier: 0
+    owner: identity:sec-team
+  edr-mgr-01:
+    tier: 0
+    owner: identity:sec-team
+  idp-01:
+    tier: 0
+    owner: identity:sec-team
+
+  app-01:
+    tier: 1
+    owner: identity:app-team
+  app-02:
+    tier: 1
+    owner: identity:app-team
+
+  ws-01:
+    tier: 2
+    owner: identity:it-helpdesk
+  ws-02:
+    tier: 2
+    owner: identity:it-helpdesk

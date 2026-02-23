@@ -1,0 +1,13 @@
+identities:
+  alice:
+    role: analyst
+    criticality: normal
+  bob:
+    role: soc-lead
+    criticality: high
+  svc-backup:
+    role: service-account
+    criticality: high
+  ceo:
+    role: vip
+    criticality: high

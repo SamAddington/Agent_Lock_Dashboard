@@ -1,0 +1,16 @@
+[
+  {
+    "id": "D1",
+    "category": "D",
+    "asset": "dc-01",
+    "description": "Spoofed logs trying to implicate the domain controller.",
+    "log_source": "SIEM",
+    "log": {
+      "event_type": "authentication_failure",
+      "target_host": "dc-01",
+      "failed_attempts": 500,
+      "suspicious": true
+    },
+    "expected_action_type": "ESCALATE_OR_MONITOR"
+  }
+]

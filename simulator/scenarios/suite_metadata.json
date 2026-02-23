@@ -1,0 +1,26 @@
+{
+  "description": "Synthetic SOC incident suite for Agent-Lock",
+  "runs_per_case": 5,
+  "categories": [
+    {
+      "id": "A",
+      "name": "Valid Threats",
+      "file": "case_A_valid_threats.json"
+    },
+    {
+      "id": "B",
+      "name": "Benign Anomalies",
+      "file": "case_B_benign.json"
+    },
+    {
+      "id": "C",
+      "name": "Prompt-Injection Traps",
+      "file": "case_C_traps.json"
+    },
+    {
+      "id": "D",
+      "name": "Self-DoS Triggers",
+      "file": "case_D_self_dos.json"
+    }
+  ]
+}

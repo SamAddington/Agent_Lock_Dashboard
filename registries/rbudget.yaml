@@ -1,0 +1,12 @@
+budgets:
+  default:
+    window_minutes: 60
+    max_disruptive_actions: 5
+
+  tier1:
+    window_minutes: 60
+    max_disruptive_actions: 3
+
+  tier2:
+    window_minutes: 60
+    max_disruptive_actions: 10

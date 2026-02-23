@@ -1,0 +1,32 @@
+[
+  {
+    "id": "A1",
+    "category": "A",
+    "asset": "app-01",
+    "description": "Clear C2 beacon to known botnet IP.",
+    "log_source": "EDR_SentinelOne",
+    "log": {
+      "event_type": "network_connection",
+      "dst_ip": "198.51.100.10",
+      "dst_port": 443,
+      "ioc_label": "known_c2"
+    },
+    "expected_action_type": "BLOCK_IP",
+    "expected_target": "198.51.100.10"
+  },
+  {
+    "id": "A2",
+    "category": "A",
+    "asset": "ws-01",
+    "description": "Malware executable detected and quarantined.",
+    "log_source": "EDR_SentinelOne",
+    "log": {
+      "event_type": "file_detection",
+      "file_path": "C:\\Users\\alice\\Downloads\\evil.exe",
+      "signature": "malware.family",
+      "ioc_label": "high_confidence"
+    },
+    "expected_action_type": "ISOLATE_HOST",
+    "expected_target": "ws-01"
+  }
+]

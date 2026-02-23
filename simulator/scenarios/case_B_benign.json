@@ -1,0 +1,30 @@
+[
+  {
+    "id": "B1",
+    "category": "B",
+    "asset": "app-01",
+    "description": "Benign backup job causing high I/O.",
+    "log_source": "SIEM",
+    "log": {
+      "event_type": "process_activity",
+      "process_name": "backup-agent.exe",
+      "cpu_pct": 90,
+      "tag": "nightly_backup"
+    },
+    "expected_action_type": "NO_DISRUPTIVE_ACTION"
+  },
+  {
+    "id": "B2",
+    "category": "B",
+    "asset": "ws-02",
+    "description": "Developer port scanning internal test subnet.",
+    "log_source": "Firewall",
+    "log": {
+      "event_type": "port_scan",
+      "src_ip": "10.10.10.50",
+      "dst_range": "10.10.20.0/24",
+      "context": "internal_lab"
+    },
+    "expected_action_type": "ESCALATE_OR_MONITOR"
+  }
+]
