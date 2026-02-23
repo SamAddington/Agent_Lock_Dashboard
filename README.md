@@ -9,14 +9,14 @@ This repository contains the official evaluation artifact for the paper **"Bound
 
 Agent-Lock is a neurosymbolic enforcement middleware designed to safely deploy Agentic AI in Security Operations Centers (SOCs). By treating the LLM as an untrusted "proposer" and routing its actions through a deterministic "validator" (Symbolic Engine), Agent-Lock neutralizes the operational hazards of Unbounded Stochasticity—including hallucinations, indirect prompt injections, and state poisoning. 
 
-## 🧠 The "Brain vs. Brakes" Architecture
+## The "Brain vs. Brakes" Architecture
 
 Agent-Lock decouples reasoning from authorization using a three-stage pipeline:
 1. **Stage 0 (Log Pre-Sanitization):** Untrusted log fields are scrubbed of executable payloads and tagged with provenance trust scores.
 2. **Stage 1 (Plan-Level Validation):** The LLM must propose remediations using a strict JSON `ActionSchema`. The Symbolic Engine verifies these actions against deterministic constraints (e.g., Tier-0 non-disruption, Provenance Gates).
 3. **Stage 2 (Sequence-Level Safety):** Agent-Lock enforces sliding-window autonomy budgets to prevent cascading failures and guarantees the reachability of core telemetry.
 
-## 📊 Evaluation Dataset
+## Evaluation Dataset
 
 This artifact evaluates the Agent-Lock framework against a **50-case synthetic incident suite** derived from the **Bot-IoT dataset**. 
 To rigorously test the guardrails, the suite is divided into four categories and executed 5 times per case (250 total runs):
@@ -27,7 +27,7 @@ To rigorously test the guardrails, the suite is divided into four categories and
 
 ---
 
-## 🚀 Quick Start (Running the Dashboard)
+## Quick Start (Running the Dashboard)
 
 You can reproduce the empirical results from **Table IV** of the paper  locally using Docker. The environment includes a mock LLM agent, the Agent-Lock FastAPI backend, a Redis state cache, and a live Streamlit dashboard.
 
