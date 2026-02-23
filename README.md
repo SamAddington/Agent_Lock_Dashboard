@@ -18,7 +18,7 @@ Agent-Lock decouples reasoning from authorization using a three-stage pipeline:
 
 ## Evaluation Dataset
 
-This artifact evaluates the Agent-Lock framework against a **50-case synthetic incident suite** derived from the **Bot-IoT dataset**. 
+This artifact evaluates the Agent-Lock framework against a **50-case synthetic incident suite** derived from the **Bot-IoT dataset** (https://www.kaggle.com/datasets/vigneshvenkateswaran/bot-iot-5-data?resource=download). 
 To rigorously test the guardrails, the suite is divided into four categories and executed 5 times per case (250 total runs):
 * **Category A:** Valid Threats (Action Success Baseline)
 * **Category B:** Benign Anomalies (False Positive Traps)
