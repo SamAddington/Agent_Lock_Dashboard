@@ -1,0 +1,16 @@
+assets:
+  dc-01:
+    id: dc-01
+    tier: 0
+    role: domain_controller
+    notes: "Tier-0 domain controller (critical auth)"
+  siem-01:
+    id: siem-01
+    tier: 1
+    role: siem
+    notes: "Tier-1 logging/monitoring"
+  vpn-gw-01:
+    id: vpn-gw-01
+    tier: 1
+    role: vpn_gateway
+    notes: "Tier-1 VPN gateway for workforce"

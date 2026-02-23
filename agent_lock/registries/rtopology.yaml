@@ -1,0 +1,15 @@
+core_endpoints:
+  - dc-01
+  - siem-01
+  - edr-mgr-01
+  - idp-01
+
+dependencies:
+  siem-01:
+    requires: ["dc-01", "idp-01"]
+  edr-mgr-01:
+    requires: ["dc-01", "idp-01"]
+  app-01:
+    requires: ["siem-01", "edr-mgr-01"]
+  ws-01:
+    requires: ["siem-01", "edr-mgr-01"]
