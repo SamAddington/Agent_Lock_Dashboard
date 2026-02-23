@@ -1,6 +1,6 @@
 # Agent-Lock: Bounded Autonomy in the SOC
 
-[cite_start]**Artifact Repository for WOSOC 2026, San Diego, CA** **Author:** Professor Samuel Addington, California State University Long Beach [cite: 3, 4]
+[cite_start]**Artifact Repository for WOSOC 2026, San Diego, CA** **Author:** Samuel Addington, California State University Long Beach [cite: 3, 4]
 
 [cite_start][![Conference](https://img.shields.io/badge/WOSOC-2026-blue)](https://www.ndss-symposium.org) [cite: 19, 22]
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
